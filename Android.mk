@@ -12,11 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-ifeq ($(TARGET_DEVICE),a03s)
+ifneq ($(filter a03s, $(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
 endif
