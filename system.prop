@@ -1,0 +1,11 @@
+ro.display.series=Samsung A03s
+
+ro.product.board=a03s
+ro.board.platform=mt6765
+
+persist.sys.usb.config=mtp
+
+ro.boot.dynamic_partitions=true
+
+ro.boot.bootdevice=11230000.msdc
+ro.boot.bootdevice=11240000.msdc

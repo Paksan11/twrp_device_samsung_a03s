@@ -1,1 +1,1 @@
-# twrp_device_samsung_a03ss
+# TWRP Device tree for Galaxy A03s
