@@ -15,7 +15,7 @@
 
 # Physical partitions
 /cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache"
-/data		f2fs    	/dev/block/by-name/userdata 	flags=wait,encryptable=footer,length=-16384
+/data		f2fs    	/dev/block/by-name/userdata 	flags=encryptable=footer,length=-16384
 /efs		ext4		/dev/block/by-name/sec_efs		flags=backup=1;display="Efs"
 /metadata	ext4		/dev/block/by-name/md_udc		flags=backup=1;display="Metadata"
 /misc		emmc    	/dev/block/by-name/misc         flags=backup=1;display="Misc"
