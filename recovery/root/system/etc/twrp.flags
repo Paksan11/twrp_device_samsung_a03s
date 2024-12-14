@@ -17,12 +17,12 @@
 # Physical partitions
 
 /cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache"
-/data		f2fs    	/dev/block/by-name/userdata 	flags=encryptable=footer,length=-16384
+/data		f2fs    	/dev/block/by-name/userdata 	flags=length=-16384,encryptable=footer
 /efs		ext4		/dev/block/by-name/sec_efs		flags=backup=1;display="Efs"
 /metadata	ext4		/dev/block/by-name/md_udc		flags=backup=1;display="Metadata"
-/nvram		emmc    	/dev/block/by-name/nvram        flags=backup=1;subpartitionof=/nvdata;display="Nvram"
+/nvram		emmc    	/dev/block/by-name/nvram        flags=backup=1;subpartitionof=/nvdata
 /nvdata		emmc    	/dev/block/by-name/nvdata       flags=backup=1;display="Nvdata"
-/nvcfg		emmc    	/dev/block/by-name/nvcfg        flags=backup=1;subpartitionof=/nvdata;display="Nvcfg"
+/nvcfg		emmc    	/dev/block/by-name/nvcfg        flags=backup=1;subpartitionof=/nvdata
 /omr        ext4        /dev/block/by-name/omr          flags=backup=1;display="Omr"
 /optics     ext4		/dev/block/by-name/optics   	flags=backup=1;display="Optics"
 /prism      ext4		/dev/block/by-name/prism     	flags=backup=1;display="Prism"
@@ -33,5 +33,5 @@
 
 # SDCard & USB-OTG 
 
-/external_sd	vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable;display="MicroSD card"
-/usb-otg    	auto	/dev/block/sda1 		/dev/block/sda			flags=storage;wipeingui;removable;display="USB OTG"
+/external_sd	vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg    	auto	/dev/block/sda1 		/dev/block/sda			flags=display="USB-OTG";storage;wipeingui;removable
