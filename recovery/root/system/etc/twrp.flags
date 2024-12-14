@@ -1,11 +1,12 @@
 # mount point	fstype		device			device2				flags
 
 # Symlinked partitions
+
 /boot    		emmc		/dev/block/by-name/boot			flags=backup=1;flashimg=1
 /recovery    	emmc		/dev/block/by-name/recovery		flags=backup=1;flashimg=1
-/dtbo_image 	emmc		/dev/block/by-name/dtbo			flags=backup=0;flashimg=1;display="DTBO Image"
+/dtbo_image 	emmc		/dev/block/by-name/dtbo			flags=backup=0;flashimg=1;display="Dtbo Image"
 /md1img_image	emmc		/dev/block/by-name/md1img		flags=backup=0;flashimg=1;display="Md1img Image"
-/omr_image      emmc        /dev/block/by-name/omr		    flags=backup=0;flashimg;display="OMR Image"
+/omr_image      emmc        /dev/block/by-name/omr		    flags=backup=0;flashimg=1;display="Omr Image"
 /optics_image	emmc		/dev/block/by-name/optics   	flags=backup=0;flashimg=1;display="Optics Image"
 /prism_image	emmc		/dev/block/by-name/prism    	flags=backup=0;flashimg=1;display="Prism Image"
 /product_image	emmc		/dev/block/mapper/product		flags=backup=0;flashimg=1;display="Product Image"
@@ -14,14 +15,14 @@
 /vbmeta_image	emmc		/dev/block/by-name/vbmeta       flags=backup=0;flashimg=1;display="Vbmeta Image"
 
 # Physical partitions
+
 /cache		ext4		/dev/block/by-name/cache		flags=backup=1;display="Cache"
 /data		f2fs    	/dev/block/by-name/userdata 	flags=encryptable=footer,length=-16384
 /efs		ext4		/dev/block/by-name/sec_efs		flags=backup=1;display="Efs"
 /metadata	ext4		/dev/block/by-name/md_udc		flags=backup=1;display="Metadata"
-/misc		emmc    	/dev/block/by-name/misc         flags=backup=1;display="Misc"
-/nvram		emmc    	/dev/block/by-name/nvram        flags=backup=1;display="Nvram"
+/nvram		emmc    	/dev/block/by-name/nvram        flags=backup=1;subpartitionof=/nvdata;display="Nvram"
 /nvdata		emmc    	/dev/block/by-name/nvdata       flags=backup=1;display="Nvdata"
-/nvcfg		emmc    	/dev/block/by-name/nvcfg        flags=backup=1;display="Nvcfg"
+/nvcfg		emmc    	/dev/block/by-name/nvcfg        flags=backup=1;subpartitionof=/nvdata;display="Nvcfg"
 /omr        ext4        /dev/block/by-name/omr          flags=backup=1;display="Omr"
 /optics     ext4		/dev/block/by-name/optics   	flags=backup=1;display="Optics"
 /prism      ext4		/dev/block/by-name/prism     	flags=backup=1;display="Prism"
@@ -30,6 +31,7 @@
 /scp1		emmc		/dev/block/by-name/scp1   		flags=backup=1;display="Scp1"
 /sspm_1		emmc		/dev/block/by-name/sspm_1		flags=backup=1;display="Sspm_1"
 
-# Removable storage
-/external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable;display="MicroSD_card"
-/usb-otg    	auto		/dev/block/sda1 		/dev/block/sda			flags=storage;wipeingui;removable;display="USB-OTG"
+# SDCard & USB-OTG 
+
+/external_sd	vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1		flags=storage;wipeingui;removable;display="MicroSD card"
+/usb-otg    	auto	/dev/block/sda1 		/dev/block/sda			flags=storage;wipeingui;removable;display="USB OTG"
