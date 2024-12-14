@@ -123,7 +123,7 @@ TW_EXCLUDE_TWRPAPP := true
 TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.0/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 PLATFORM_VERSION := 12.0
 PLATFORM_SECURITY_PATCH := 2099-12-31
 
