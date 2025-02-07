@@ -1,9 +1,9 @@
 # mount point    	fs          type		device			device2				flags
 # Logical partitions
-system		/system     		ext4							wait,logical,first_stage_mount
-vendor		/vendor      		ext4							wait,logical,first_stage_mount
-product		/product        	ext4							wait,logical,first_stage_mount
-odm  		/odm         		ext4							wait,logical,first_stage_mount
+system		/system     		ext4							wait,slotselect,logical,first_stage_mount
+vendor		/vendor      		ext4							wait,slotselect,logical,first_stage_mount
+product		/product        	ext4							wait,slotselect,logical,first_stage_mount
+odm  		/odm         		ext4							wait,slotselect,logical,first_stage_mount
 
 # Image
 /dtbo_image 	emmc		/dev/block/by-name/dtbo     			flags=backup=1;flashimg;display="DTBO Image"
@@ -11,9 +11,6 @@ odm  		/odm         		ext4							wait,logical,first_stage_mount
 /omr_image      emmc        /dev/block/by-name/omr      		    flags=backup=1;flashimg;display="OMR Image"
 /optics_image	emmc		/dev/block/by-name/optics           	flags=backup=1;flashimg;display="Optics Image"
 /prism_image	emmc		/dev/block/by-name/prism            	flags=backup=1;flashimg;display="Prism Image"
-/product_image	emmc		/dev/block/mapper/product       		flags=backup=1;flashimg;display="Product Image"
-/system_image	emmc		/dev/block/mapper/system        		flags=backup=1;flashimg;display="System Image"
-/vendor_image	emmc		/dev/block/mapper/vendor        		flags=backup=1;flashimg;display="Vendor Image"
 /vbmeta_image	emmc		/dev/block/by-name/vbmeta              flags=backup=1;flashimg;display="VBmeta Image"
 /vbmeta_system_image	emmc		/dev/block/by-name/vbmeta_system       flags=backup=1;flashimg;display="VBmeta System Image"
 
@@ -21,7 +18,7 @@ odm  		/odm         		ext4							wait,logical,first_stage_mount
 /boot    	emmc    	/dev/block/platform/bootdevice/by-name/boot     	flags=backup=1;flashimg
 /recovery   emmc    	/dev/block/platform/bootdevice/by-name/recovery     flags=backup=1;flashimg
 /cache		ext4		/dev/block/platform/bootdevice/by-name/cache		flags=backup=0;display="Cache"
-/data		f2fs    	/dev/block/platform/bootdevice/by-name/userdata 	flags=encryptable=footer,length=-16384
+/data		f2fs    	/dev/block/platform/bootdevice/by-name/userdata 	flags=metadata_encryption=aes-256-cts:wrappedkey_v0
 /efs		ext4		/dev/block/platform/bootdevice/by-name/sec_efs		flags=backup=1;display="EFS"
 /metadata	ext4		/dev/block/platform/bootdevice/by-name/md_udc		flags=backup=1;display="Metadata"
 /misc   	ext4		/dev/block/platform/bootdevice/by-name/misc  		flags=backup=1;display="Misc"
