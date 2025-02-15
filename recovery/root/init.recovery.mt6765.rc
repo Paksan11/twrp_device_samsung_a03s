@@ -32,4 +32,10 @@ on post-fs
     symlink /dev/block/platform/bootdevice/by-name/preloader_a /dev/block/by-name/preloader_raw_a
     symlink /dev/block/platform/bootdevice/by-name/preloader_b /dev/block/by-name/preloader_raw_b
 	
-    exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
+on fs
+    export ANDROID_ROOT /system_root
+
+on init
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+
+on boot
