@@ -27,10 +27,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery
 
-# Drm
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4
-
 # Health Hal
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
