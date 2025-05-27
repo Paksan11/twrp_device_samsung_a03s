@@ -1,0 +1,56 @@
+# mount point    	fs          type		device			device2				flags
+
+# Physical partitions
+/boot_para      emmc        /dev/block/platform/bootdevice/by-name/boot_para    flags=backup=1;display="boot_para"
+/cache          ext4        /dev/block/platform/bootdevice/by-name/cache        flags=backup=0;display="Cache"
+/data           f2fs        /dev/block/platform/bootdevice/by-name/userdata     flags=length=-16384,encryptable=footer
+/expdb          emmc        /dev/block/platform/bootdevice/by-name/expdb        flags=backup=1;display="Expdb"
+/efs            ext4        /dev/block/platform/bootdevice/by-name/sec_efs      flags=backup=1;display="Efs"
+/metadata       ext4        /dev/block/platform/bootdevice/by-name/md_udc       flags=backup=1;wipeingui;display="Metadata"
+/misc           emmc        /dev/block/platform/bootdevice/by-name/misc         flags=backup=0;display="Misc"
+/nvcfg          emmc        /dev/block/platform/bootdevice/by-name/nvcfg        flags=backup=1;display="Nvcfg"
+/nvdata         emmc        /dev/block/platform/bootdevice/by-name/nvdata       flags=backup=1;display="Nvdata"
+/nvram          emmc        /dev/block/platform/bootdevice/by-name/nvram        flags=backup=1;display="Nvram"
+/odm            ext4        /dev/block/mapper/odm           flags=backup=1;display="Odm"
+/omr            ext4        /dev/block/platform/bootdevice/by-name/omr          flags=backup=1;display="Omr"
+/odmdtbo        emmc        /dev/block/platform/bootdevice/by-name/odmdtbo      flags=backup=1;display="Odmdtbo"
+/logo           emmc        /dev/block/platform/bootdevice/by-name/logo         flags=backup=1;display="Logo"
+/para           emmc        /dev/block/platform/bootdevice/by-name/para         flags=backup=1;display="Para"
+/persistent     emmc        /dev/block/platform/bootdevice/by-name/frp          flags=backup=1;display="Persistent"
+/optics         ext4        /dev/block/platform/bootdevice/by-name/optics       flags=backup=1;display="Optics"
+/prism          ext4        /dev/block/platform/bootdevice/by-name/prism        flags=backup=1;display="Prism"
+/persist        ext4        /dev/block/platform/bootdevice/by-name/persist      flags=backup=1;display="Persist"
+/product        ext4        /dev/block/mapper/product       flags=backup=1;display="Product"
+/proinfo        emmc        /dev/block/platform/bootdevice/by-name/proinfo      flags=backup=1;display="Proinfo"
+/protect_f      emmc        /dev/block/platform/bootdevice/by-name/protect1     flags=backup=1;display="Protect_f"
+/protect_s      emmc        /dev/block/platform/bootdevice/by-name/protect2     flags=backup=1;display="Protect_s"
+/seccfg         emmc        /dev/block/platform/bootdevice/by-name/seccfg       flags=backup=1;display="Seccfg"
+/system         ext4        /dev/block/mapper/system        flags=backup=1;wipeingui;display="System"
+/vendor         ext4        /dev/block/mapper/vendor        flags=backup=1;wipeingui;display="Vendor"
+
+# Stock Image
+/boot           emmc        /dev/block/platform/bootdevice/by-name/boot         flags=backup=1;flashimg
+/recovery       emmc        /dev/block/platform/bootdevice/by-name/recovery     flags=backup=1;flashimg
+/dtbo_image     emmc        /dev/block/platform/bootdevice/by-name/dtbo         flags=backup=1;flashimg;display="Dtbo Image"
+/efuse_image    emmc        /dev/block/platform/bootdevice/by-name/efuse        flags=backup=1;flashimg;display="Efuse Image"
+/md1img_image   emmc        /dev/block/platform/bootdevice/by-name/md1img       flags=backup=1;flashimg;display="Md1img Image"
+/odm_image      emmc        /dev/block/mapper/odm           flags=backup=1;flashimg;display="Odm Image"
+/omr_image      emmc        /dev/block/platform/bootdevice/by-name/omr          flags=backup=1;flashimg;display="Omr Image"
+/gz_image       emmc        /dev/block/platform/bootdevice/by-name/gz1          flags=backup=1;flashimg;display="Gz Image"
+/lk_image       emmc        /dev/block/platform/bootdevice/by-name/lk           flags=backup=1;flashimg;display="Lk Image"
+/optics_image   emmc        /dev/block/platform/bootdevice/by-name/optics       flags=backup=1;flashimg;display="Optics Image"
+/prism_image    emmc        /dev/block/platform/bootdevice/by-name/prism        flags=backup=1;flashimg;display="Prism Image"
+/product_image  emmc        /dev/block/mapper/product       flags=backup=1;flashimg;display="Product Image"
+/tee_image      emmc        /dev/block/platform/bootdevice/by-name/tee1         flags=backup=1;flashimg;display="Tee Image"
+/tzar_image     emmc        /dev/block/platform/bootdevice/by-name/tzar         flags=backup=1;flashimg;display="Tzar Image"
+/spmfw_image    emmc        /dev/block/platform/bootdevice/by-name/spmfw        flags=backup=1;flashimg;display="Spmfw Image"
+/scp_image      emmc        /dev/block/platform/bootdevice/by-name/scp1         flags=backup=1;flashimg;display="Scp Image"
+/sspm_image     emmc        /dev/block/platform/bootdevice/by-name/sspm_1       flags=backup=1;flashimg;display="Sspm Image"
+/system_image   emmc        /dev/block/mapper/system        flags=backup=1;flashimg;display="System Image"
+/vbmeta_image   emmc        /dev/block/platform/bootdevice/by-name/vbmeta       flags=backup=1;flashimg;display="Vbmeta Image"
+/vendor_image   emmc        /dev/block/mapper/vendor        flags=backup=1;flashimg;display="Vendor Image"
+/vbmeta_system_image  emmc  /dev/block/platform/bootdevice/by-name/vbmeta_system       flags=backup=1;flashimg;display="Vbmeta System Image"
+
+# Removable storage
+/external_sd    vfat        /dev/block/mmcblk1p1  /dev/block/mmcblk1  flags=storage;wipeingui;removable;display="Micro SDCard"
+/usb-otg        vfat        /dev/block/sda1       /dev/block/sda	     flags=storage;wipeingui;removable;display="USB-OTG"
