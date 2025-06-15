@@ -26,11 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #<src>                                    <mnt_point>    <type>    <mnt_flags and options>    <fs_mgr_flags>
-system                                               /system       ext4        ro,barrier=1,discard      avb=vbmeta,logical,first_stage_mount formattable
-vendor                                               /vendor       ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
-product                                              /product      ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
-odm                                                  /odm          ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
-
 /dev/block/platform/bootdevice/by-name/boot        /boot           emmc        defaults                  recoveryonly
 /dev/block/platform/bootdevice/by-name/recovery    /recovery       emmc        defaults                  recoveryonly
 /dev/block/platform/bootdevice/by-name/userdata	/data	f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	wait,length=-16384,fscompress
@@ -55,3 +50,8 @@ odm                                                  /odm          ext4        r
 # Samsung ODE
 #/dev/block/platform/bootdevice/by-name/keydata     /keydata        ext4        defaults                  recoveryonly
 #/dev/block/platform/bootdevice/by-name/keyrefuge	/keyrefuge	f2fs	defaults	recoveryonly
+
+/dev/block/mapper/odm                                                  /odm          ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
+/dev/block/mapper/product                                              /product      ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
+/dev/block/mapper/system                                               /system       ext4        ro,barrier=1,discard      avb=vbmeta,logical,first_stage_mount formattable
+/dev/block/mapper/vendor                                               /vendor       ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
