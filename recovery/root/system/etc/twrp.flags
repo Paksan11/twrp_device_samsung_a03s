@@ -1,7 +1,6 @@
 # mount point    	fs          type		device			device2				flags
 
 # Physical partitions
-/boot_para      emmc        /dev/block/platform/bootdevice/by-name/boot_para    flags=backup=1;display="boot_para"
 /cache          ext4        /dev/block/platform/bootdevice/by-name/cache        flags=backup=0;display="Cache"
 /data           f2fs        /dev/block/platform/bootdevice/by-name/userdata     flags=length=-16384,encryptable=footer
 /expdb          emmc        /dev/block/platform/bootdevice/by-name/expdb        flags=backup=1;display="Expdb"
@@ -22,7 +21,7 @@
 /persist        ext4        /dev/block/platform/bootdevice/by-name/persist      flags=backup=1;display="Persist"
 /product        ext4        /dev/block/mapper/product       flags=backup=1;display="Product"
 /proinfo        emmc        /dev/block/platform/bootdevice/by-name/proinfo      flags=backup=1;display="Proinfo"
-/protect_f      emmc        /dev/block/platform/bootdevice/by-name/protect1     flags=backup=1;display="Protect"
+/protect_f      emmc        /dev/block/platform/bootdevice/by-name/protect1     flags=backup=1;display="Protect_f"
 /protect_s      emmc        /dev/block/platform/bootdevice/by-name/protect2     flags=backup=1;display="Protect_s"
 /seccfg         emmc        /dev/block/platform/bootdevice/by-name/seccfg       flags=backup=1;display="Seccfg"
 /system         ext4        /dev/block/mapper/system        flags=backup=1;wipeingui;display="System"
