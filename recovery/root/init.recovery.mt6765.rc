@@ -23,4 +23,5 @@ on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
 
 on boot
+     start vendor.boot-hal-1-2
      start health-hal-2-1
