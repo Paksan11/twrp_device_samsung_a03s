@@ -32,7 +32,7 @@
 /dev/block/platform/bootdevice/by-name/cache       /cache          ext4        defaults                  recoveryonly
 /dev/block/platform/bootdevice/by-name/sec_efs     /efs            ext4        defaults                  recoveryonly
 /dev/block/platform/bootdevice/by-name/misc        /misc           emmc        defaults                  recoveryonly
-/dev/block/platform/bootdevice/by-name/md_udc	/metadata	ext4	defaults	wait,first_stage_mount
+/dev/block/platform/bootdevice/by-name/md_udc	/metadata	ext4	defaults	 wait,check,formattable,first_stage_mount 
 # external SD card
 # /dev/block/mmcblk1p1                               /sdcard         sdfat       defaults                  recoveryonly
 
@@ -50,7 +50,7 @@
 # /dev/block/platform/bootdevice/by-name/keyrefuge	/keyrefuge	f2fs	defaults	recoveryonly
 
 # Super
-odm                                                  /odm          ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
-product                                              /product      ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
-system                                               /system       ext4        ro,barrier=1,discard      avb=vbmeta,logical,first_stage_mount formattable
-vendor                                               /vendor       ext4        ro,barrier=1,discard      avb,logical,first_stage_mount formattable
+odm                                                  /odm          ext4        ro,barrier=1,discard      avb,logical,first_stage_mount wait,check,formattable
+product                                              /product      ext4        ro,barrier=1,discard      avb,logical,first_stage_mount wait,check,formattable
+system                                               /system       ext4        ro,barrier=1,discard      avb=vbmeta,logical,first_stage_mount wait,check,formattable
+vendor                                               /vendor       ext4        ro,barrier=1,discard      avb,logical,first_stage_mount wait,check,formattable
