@@ -10,7 +10,7 @@ $ repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manif
 ```
 # Clone a03s repo
 ```
-$ git clone https://github.com/Paksan11/twrp_device_samsung_a03s.git -b android-12.1 device/samsung/a03s
+$ git clone https://github.com/Paksan11/twrp_device_samsung_a03s.git -b android-12 device/samsung/a03s
 ```
 # Sync
 ```
